@@ -1,6 +1,5 @@
 import React from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCogs from './BackgroundCircles';
 
 type IntroFacts = {
     name: string;
@@ -11,18 +10,14 @@ const Hero: React.FC<IntroFacts> = ({ name, role }) => {
     const [introText, count] = useTypewriter({ 
         words: [
            "Hello I'm "+ name ,
-           "I'm an awesome "+ role,
+           "I'm your "+ role,
         ], loop: true, delaySpeed: 2000});
     
     return (
-        <div>
-            <BackgroundCogs/>
-            <h1>
-                <span>{introText}</span>
-                <Cursor cursorColor="orange" cursorStyle="_"/>
-
-            </h1>
-        </div>
+        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+            <span>{introText}</span>
+            <Cursor cursorColor="orange" cursorStyle="_"/>
+        </h1>
     );
 };
 
